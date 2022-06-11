@@ -1,48 +1,136 @@
-<!-- <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-      Bootstrap
-    </a>
-  </nav> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+<nav class="navbar  navbar-expand-lg navbar-light" style="background-color: #b0e6ff;">
+  <!--  #e3f2fd; -->
+  <!-- <img src="assets\images\travel.jpg" class="logo"> -->
+  <!-- <img src="assets\images\travel1.jpg" class="logo"> -->
+  <!-- <img src="assets\images\travel2.jpg" class="logo"> -->
 
-  <!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-     Navbar content 
-    <h1>Home</h1>
-    <h1>Register</h1>
-    <h1>Login</h1>
-  </nav> -->
+  <a class="navbar-brand" href="#">EnRoute</a>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" -->
+    <!-- aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"> -->
+    <!-- <span class="navbar-toggler-icon"></span> -->
+  <!-- </button> -->
+  <!-- <form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+  </form> -->
 
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-    </li>
-  </ul>
-  <!-- <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">Home </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">profile</div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Contact</div>
-  </div> -->
+  <div class="col-md-11  text-right" style="background-color: #b0e6ff;">
+    <!-- <a class="nav-link" href="#" routerLink = "/login" routerLinkActive= "active">Login</a> -->
 
-  <ul
-          class="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuAvatar"
-        >
-          <li>
-            <a class="dropdown-item" href="#">My profile</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Settings</a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">Logout</a>
-          </li>
-        </ul>
+    <!-- <a routerLink="/Service/Sign_in"><button class="btn btn-success pull-right" > Add Customer</button></a> -->
+    <a routerLink="/login"><button class="btn btn-info mr-3">LOGIN</button></a>
+    <a routerLink="/register"><button class="btn btn-info">REGISTER</button></a>
+
+    <!-- <a class="nav-link" href="#" routerLink = "/login" routerLinkActive= "active"><button class="btn btn-info">Login/Reg</button> </a> -->
+  <!-- <button class="btn btn-info" type="button" aria-placeholder="Login" routerLink="login" routerLinkActive= "active">Login/Register</button> -->
+</div>
+</nav>
+<!-- <button class="btn btn-info" type="button" aria-placeholder="Login">Login</button> -->
+
+<!-- <nav class="navbar   navbar-expand-lg navbar-dark bg-primary"> -->
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <!-- <nav class="navbar  navbar-expand-lg navbar-light" style="background-color: #bed5ff;"> -->
+    <nav class="navbar  navbar-expand-lg navbar-light" style="background-color: white;border: 15px solid #b0e6ff;">
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Flights</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Train</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Bus</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Hotels</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Vacay</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- <a  routerLink="/login" routerLinkActive="active">Login</a> -->
 <router-outlet></router-outlet>
-<!-- <app-login></app-login> -->
+<br />
+<br />
+<div class="u_animateimg u_animateimg_hover">
+  <div class="u_animateimg_content">
+    <a title="Harrisburg" href="https://www.trip.com/things-to-do/harrisburg-1867/">
+      <img alt="Harrisburg" src="https://youimg1.tripcdn.com/target/0ww6w120006ok36n3B3A5_C_550_412.jpg?proc=source/trip;namelogo/d_40" style="height: 1px; width: 1px; display: none;"><div class="m_image"><div class="img" 
+        style="background-image: url(&quot;https://youimg1.tripcdn.com/target/0ww6w120006ok36n3B3A5_C_550_412.jpg?proc=source/trip;namelogo/d_40&quot;);">
+      </div>
+    </div>
+  </a>
+</div>
+</div>
+<!-- <div class="img-wrapper">
+<img class="inner-img" src="assets/images/nyc1.jpeg">
+
+<p class="text-block">Atlantic City</p>
+</div> -->
+
+
+<!-- <div class="img-wrapper" style="max-width: 20rem;">
+  <img class="inner-img" src="assets/images/dubai1.jpeg">
+   <p class="carousel-caption">Dubai</p> 
+   <p class="text-block">Dubai</p> 
+  <div class="card-body text-dark p-12">
+    Sample text
+  </div>
+</div>
+<br />
+<br /> -->
+<div class="card" style="max-width: 20rem;">
+
+  <!-- Card image -->
+  <img class="card-img-top" src="assets/images/dubai1.jpeg" alt="Card image cap">
+
+  <!-- Card content -->
+  <div class="card-body text-white  p-12">
+    Dubai
+  </div>
+
+</div>
+<div class="card" style="max-width: 20rem;">
+
+  <!-- Card image -->
+  <img class="card-img-top" src="assets/images/nyc1.jpeg" alt="Card image cap">
+
+  <!-- Card content -->
+  <div class="card-body text-white  p-12">
+    Atlantic City
+  </div>
+
+</div>
+
+<!-- </div> -->
+
+<!-- <div class="row">
+  <div class="col-md-4"><img src="assets/images/dubai1.jpeg"></div>
+  <div class="col-md-4">.col-md-4</div>
+  <div class="col-md-4">.col-md-4</div>
+</div> -->
+<!-- <div class="bg-image hover-zoom"> -->
+  <!-- <img  class="inner-img" src="https://mdbootstrap.com/img/new/standard/city/053.webp" height="300" width="300"/> -->
+ 
+<!-- <img src="https://mdbootstrap.com/img/new/slides/041.webp" class="img-fluid" alt="max-width: 100%;height: auto;" /> -->
+<!-- <div class="bg-image hover-overlay ripple">
+  <img src="https://mdbootstrap.com/img/new/fluid/city/055.webp" class="img-fluid" />
+  <a href="#!">
+    <div class="mask" style="background-color: rgba(57, 192, 237, 0.2);"></div>
+  </a>
+</div> -->
 

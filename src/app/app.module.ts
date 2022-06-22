@@ -5,18 +5,42 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { VacayComponent } from './vacay/vacay.component';
+import { FlightsComponent } from './flights/flights.component';
+import { FormsModule } from '@angular/forms';
+import { TrainComponent } from './train/train.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { BusComponent } from './bus/bus.component';
+import { NgbCarouselbasicComponent } from './ngb-carouselbasic/ngb-carouselbasic.component';
+import { BookFlightComponent } from './book-flight/book-flight.component';
+import { HomeComponent } from './home/home.component';
+import { FlightSummaryComponent } from './flight-summary/flight-summary.component';
+
+import{HttpClientModule} from '@angular/common/http'
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    VacayComponent
+    VacayComponent,
+    FlightsComponent,
+    TrainComponent,
+    NavigationComponent,
+    BusComponent,
+    NgbCarouselbasicComponent,
+    BookFlightComponent,
+    HomeComponent,
+    FlightSummaryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+    // AngularFontAwesomeModule
     // NgbModule
   ],
   providers: [],

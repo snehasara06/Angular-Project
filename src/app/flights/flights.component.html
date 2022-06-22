@@ -1,0 +1,65 @@
+<!-- <p>flights works!</p> -->
+<br />
+<br />
+<form class="container">
+    <!-- <i class='fa fa-plane fa-2x' style='color:#0d4487'></i> -->
+
+    <img src="assets/images/plane.png" style="width: 30px;">
+    <select>
+        <option value="round">Round trip</option>
+        <option value="one">One way</option>
+        <option value="multi">Multi city</option>
+    </select>
+    <!-- <i class="fa fa-plane fa-2x" style="color: rgb(49, 49, 177);" aria-hidden="true"  ></i> -->
+    <!-- <i class="fi-icon fi-icon_seat"></i> -->
+
+    <!-- <i class="fas fa-plane"></i> -->
+    <img src="assets/images/seat1.png" style="width: 30px;">
+    <select>
+        <option value="economy">Economy</option>
+        <option value="premeco">Premium Economy</option>
+        <option value="business">Business</option>
+        <option value="first">First</option>
+    </select>
+    <br>
+    <br>
+    <!-- <i class='fa fa-plane-departure' style='color:#63c6d9'></i> -->
+    <!-- <i class='fa fa-plane f  fa-3x'></i> fa-rotate-270<br/><br/>  -->
+    <!-- <i class='fa fa-plane fa-flip-horizontal fa-3x'></i> fa-flip-vertical<br> -->
+
+    <div class="input-group">
+    <img src="assets/images/depart.jpeg" style="width: 50px;">
+    <input type="text" placeholder="City or Airport"  class="form-control input-sm">
+    <!-- <i class='fa fa-plane' style='color:#4eb7e4'></i> -->
+    <!-- <i class='fa fa-exchange-alt' style='font-size:36px'></i> -->
+    <!-- <i class='fa fa-exchange-alt'>fa-exchange-alt</i> -->
+    <!-- <i class="fa fa-exchange fa-2x" style="color: #4bbfdc;"></i>	-->
+    <!-- <img src="assets/images/to.jfif" style="width: 30px;"> -->
+
+    <img src="assets/images/arrival.jpeg" style="width: 50px;">
+
+    <input type="text" placeholder="Anywhere"  class="form-control input-sm">
+    <!-- <span class="material-icons">airline_  seat_recline_extra</span>   -->
+
+    <!-- <i class="fa-duotone fa-seat-airline"></i> -->
+
+    <br />
+    <br />
+
+    <span class="input-group-btn" style="width:10px;"></span>
+    <label>From</label>
+    <span class="input-group-btn" style="width:10px;"></span>
+    <input type="date" placeholder="From"   class="form-control input-sm">
+    <span class="input-group-btn" style="width:10px;"></span>
+    <label>To</label>
+    <span class="input-group-btn" style="width:10px;"></span>
+    <input type="date" placeholder="To" class="form-control input-sm">
+    </div>
+<br />
+<br />
+    <!-- <div class="col-md-8 offset-md-5"> -->
+        <button [routerLink]="['./bookFlight']" class="btn btn-info">Search Flights</button>
+    <!-- </div> -->
+</form>
+
+<!-- <router-outlet></router-outlet> -->

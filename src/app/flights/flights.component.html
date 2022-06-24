@@ -1,7 +1,7 @@
 <!-- <p>flights works!</p> -->
 <br />
 <br />
-<form class="container">
+<form class="container" #flight="ngForm">
     <!-- <i class='fa fa-plane fa-2x' style='color:#0d4487'></i> -->
 
     <img src="assets/images/plane.png" style="width: 30px;">
@@ -29,7 +29,7 @@
 
     <div class="input-group">
     <img src="assets/images/depart.jpeg" style="width: 50px;">
-    <input type="text" placeholder="City or Airport"  class="form-control input-sm">
+    <input type="text" placeholder="City or Airport"  class="form-control input-sm" [(ngModel)]="depart" name="depart">
     <!-- <i class='fa fa-plane' style='color:#4eb7e4'></i> -->
     <!-- <i class='fa fa-exchange-alt' style='font-size:36px'></i> -->
     <!-- <i class='fa fa-exchange-alt'>fa-exchange-alt</i> -->
@@ -58,7 +58,7 @@
 <br />
 <br />
     <!-- <div class="col-md-8 offset-md-5"> -->
-        <button [routerLink]="['./bookFlight']" class="btn btn-info">Search Flights</button>
+        <button [routerLink]="['./bookFlight']" class="btn btn-info" (click)="onSubmit()">Search Flights</button>
     <!-- </div> -->
 </form>
 

@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-flight.component.scss']
 })
 export class BookFlightComponent implements OnInit {
-
+  form: number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  toggle() {
+this.form++;
+console.log(this.form)
+  }
 }

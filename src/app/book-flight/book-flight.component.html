@@ -60,17 +60,17 @@
 <!-- </div> -->
 
 <!-- </div>  -->
-
-
-
-
-
-
-
-
+<div class="runway">
 <div class="container">
-    <form class="row g-3">
+    <form class="row g-3" #passenger>
         <h1 class="text-center">Passenger Details</h1>
+
+        <!-- <ng-template *ngIf="form"==1>
+
+        </ng-template> -->
+
+
+
         <h3 class="text-center">Adult(12 yrs+)</h3>
         <div class="col-md-12">
             <div class="container">
@@ -86,14 +86,30 @@
                         </div>
                         <div class="col-12">
                             <label for="inputAddress" class="form-label">Gender</label>
-                            <select class="form-select" aria-label="Default select example">
-                                <!-- <option selected></option> -->
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                                <!-- <option value="3">Three</option> -->
-                            </select>
+                            <br />
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                                    value="option2">
+                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                            </div>
+
+
+
+
+                            <!-- <select class="form-select" aria-label="Default select example"> -->
+                            <!-- <option selected></option> -->
+                            <!-- <option value="1">Male</option>
+                                <option value="2">Female</option> -->
+                            <!-- <option value="3">Three</option> -->
+                            <!-- </select> -->
                             <!-- <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> -->
                         </div>
+                        <br />
                         <div class="col-12">
                             <label for="inputAddress2" class="form-label">Date of Birth</label>
                             <input type="date" class="form-control" id="inputAddress2">
@@ -128,7 +144,7 @@
                     <br />
                     <br />
                     <div class="text-center">
-                        <button class="btn btn-light">
+                        <button class="btn btn-light" (click)="toggle()">
                             <img src="assets/images/plus.png" style="width: 30px;"> Add new Adult</button>
                     </div>
                 </div>
@@ -212,4 +228,5 @@
             </div>
         </div>
     </form>
+</div>
 </div>

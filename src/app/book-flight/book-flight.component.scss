@@ -1,8 +1,22 @@
-.conatiner{
+.container{
     text-align: center;
+    // border: 3px blue solid;
+    
+    // height: 100%;
+    
+
 }
 button{
     border-radius: 10px;
     // border-color: skyblue;
     border: 3px solid skyblue;
+}
+.runway{
+    // background-image: url('https://img.freepik.com/free-photo/airplane-airport-runway-sunset-tasmania_31965-3759.jpg?w=2000');
+    background-image: url('https://wallpaperaccess.com/full/254367.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
 }

@@ -10,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { TrainComponent } from './train/train.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BusComponent } from './bus/bus.component';
-import { NgbCarouselbasicComponent } from './ngb-carouselbasic/ngb-carouselbasic.component';
 import { BookFlightComponent } from './book-flight/book-flight.component';
 import { HomeComponent } from './home/home.component';
 import { FlightSummaryComponent } from './flight-summary/flight-summary.component';
 
-import{HttpClientModule} from '@angular/common/http'
+import{HttpClientModule} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+// import{MatStepperModule} from '@angular/material'
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { AngularFontAwesomeModule } from 'angular-font-awesome';
@@ -30,7 +32,6 @@ import{HttpClientModule} from '@angular/common/http'
     TrainComponent,
     NavigationComponent,
     BusComponent,
-    NgbCarouselbasicComponent,
     BookFlightComponent,
     HomeComponent,
     FlightSummaryComponent
@@ -39,7 +40,8 @@ import{HttpClientModule} from '@angular/common/http'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
     // AngularFontAwesomeModule
     // NgbModule
   ],

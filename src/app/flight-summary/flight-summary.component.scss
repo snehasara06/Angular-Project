@@ -1,23 +1,65 @@
-.air-book {
-    height: 100%;
-    margin: 0;
-    // margin-bottom: 12%;
-    background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Airplane-wallpaper-11.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
+// .air-book {
+//     height: 100%;
+//     // margin: 0;
+//     // margin-bottom: 12%;
+//     background-image: url('https://www.technocrazed.com/wp-content/uploads/2015/12/Airplane-wallpaper-11.jpg');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+// }
+
+
+
+
+#cover {
+    
+    background: #222 url('https://www.technocrazed.com/wp-content/uploads/2015/12/Airplane-wallpaper-11.jpg') center center no-repeat;
     background-size: cover;
+    height: 74vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    // padding: 40%;
+    position:relative;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-.bgImg {
-    // background-color: url('C:\Users\sneha.saravan\Desktop\Github Backup\Angular-Project\src\assets\images\flight-bg.jpg');
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }
+
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+    border-radius: 10px;
+}
+label,
+p{
+    color: white;
+    font-size:medium;
+    font-weight: 700;
+}
+
+// .bgImg {
+//     // background-color: url('C:\Users\sneha.saravan\Desktop\Github Backup\Angular-Project\src\assets\images\flight-bg.jpg');
+//     filter: blur(8px);
+//     -webkit-filter: blur(8px);
+//     // height: 100%;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+
+// }
 
 // .flight-book {
     // background-image: url('https://images.pexels.com/photos/3769532/pexels-photo-3769532.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');

@@ -4,7 +4,6 @@ import { BookFlightComponent } from './book-flight/book-flight.component';
 import { BusComponent } from './bus/bus.component';
 import { FlightsComponent } from './flights/flights.component';
 import { LoginComponent } from './login/login.component';
-import { NgbCarouselbasicComponent } from './ngb-carouselbasic/ngb-carouselbasic.component';
 import { RegisterComponent } from './register/register.component';
 import { TrainComponent } from './train/train.component';
 import { VacayComponent } from './vacay/vacay.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
 
   { path: 'train', component: TrainComponent },
   { path: 'bus', component: BusComponent },
-  { path: 'slide', component: NgbCarouselbasicComponent }
 
 ];
 

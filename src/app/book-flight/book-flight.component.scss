@@ -1,22 +1,65 @@
-.container{
-    text-align: center;
-    // border: 3px blue solid;
+// .container{
+//     text-align: center;
+//     // border: 3px blue solid;
     
-    // height: 100%;
+//     // height: 100%;
     
 
-}
-button{
-    border-radius: 10px;
-    // border-color: skyblue;
-    border: 3px solid skyblue;
-}
-.runway{
-    // background-image: url('https://img.freepik.com/free-photo/airplane-airport-runway-sunset-tasmania_31965-3759.jpg?w=2000');
-    background-image: url('https://wallpaperaccess.com/full/254367.png');
-    background-position: center;
-    background-repeat: no-repeat;
+// }
+// button{
+//     border-radius: 10px;
+//     // border-color: skyblue;
+//     border: 3px solid skyblue;
+// }
+// .runway{
+//     // background-image: url('https://img.freepik.com/free-photo/airplane-airport-runway-sunset-tasmania_31965-3759.jpg?w=2000');
+//     background-image: url('https://wallpaperaccess.com/full/254367.png');
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     height: 100%;
+//     margin: 0;
+// }
+
+#cover {
+    background: #222 url('https://img.freepik.com/free-photo/airplane-airport-runway-sunset-tasmania_31965-3759.jpg?w=2000') center center no-repeat;
+    // background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat;
     background-size: cover;
     height: 100%;
-    margin: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#cover-caption {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* only used for background overlay not needed for centering */
+form:before {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: -1;
+    border-radius: 10px;
+}
+h3{
+    color: #222;
+    font-size: xx-large;
+    font-weight: bold;
+}
+i{
+    font-size: large;
+    color: #222;
+}
+.icon{
+    text-align: right;
+    color: #222;
 }

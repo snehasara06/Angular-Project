@@ -32,6 +32,11 @@
     position: relative;
 }
 
+.icon:hover {
+    background-color: white;
+  }
+
+
 #cover-caption {
     width: 100%;
     position: relative;
@@ -62,4 +67,5 @@ i{
 .icon{
     text-align: right;
     color: #222;
+    margin-left: 400px;
 }

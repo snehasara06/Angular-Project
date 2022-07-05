@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { VacayComponent } from './vacay/vacay.component';
 import { FlightsComponent } from './flights/flights.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TrainComponent } from './train/train.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { BusComponent } from './bus/bus.component';
@@ -14,9 +14,12 @@ import { BookFlightComponent } from './book-flight/book-flight.component';
 import { HomeComponent } from './home/home.component';
 import { FlightSummaryComponent } from './flight-summary/flight-summary.component';
 
-import{HttpClientModule} from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlightTableComponent } from './flight-table/flight-table.component'
 
+import { AuthGuardGuard } from './auth-guard.guard';
+import { TokenInterceptorService } from './Services/TokenInterceptor/token-interceptor.service';
 // import{MatStepperModule} from '@angular/material'
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -34,18 +37,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     BusComponent,
     BookFlightComponent,
     HomeComponent,
-    FlightSummaryComponent
+    FlightSummaryComponent,
+    FlightTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    ReactiveFormsModule
+    // BrowserAnimationsModule,
     // AngularFontAwesomeModule
     // NgbModule
   ],
-  providers: [],
+  providers: [AuthGuardGuard,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

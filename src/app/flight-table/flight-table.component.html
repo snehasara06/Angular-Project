@@ -1,0 +1,278 @@
+<br />
+
+<h3 class="text-center">FLIGHT DATA</h3>
+<table class="table bg-white">
+  <thead style="background-color: skyblue;">
+    <tr>
+      <th>Flight</th>
+      <th>Time</th>
+      <th>From</th>
+      <th>To</th>
+      <th>ETD</th>
+      <th>Status</th>
+      <th>Gate</th>
+      <th>Actions</th>
+      <th>Ticket</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://www.pngitem.com/pimgs/m/133-1330859_air-india-star-alliance-logo-hd-png-download.png" alt=""
+            style="width: 105px; height: 45px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Air India</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">12:25 PM</p>
+      </td>
+      <td>Coimbatore</td>
+      <td>New York</td>
+      <td>13:15</td>
+      <td><span class="badge badge-success rounded-pill d-inline">Boarding</span></td>
+      <td>A5</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="assets/images/indigo.png" alt="" style="width: 105px; height: 45px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">IndiGo</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">4:30 PM</p>
+      </td>
+      <td>Chennai</td>
+      <td>Dubai</td>
+      <td>14:00</td>
+      <td><span class="badge badge-primary rounded-pill d-inline">Ready to Take off</span></td>
+      <td>A16</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://upload.wikimedia.org/wikipedia/hi/f/fa/SpiceJet_logo.png" alt=""
+            style="width: 105px; height: 45px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Spice Jet</p>
+          </div>
+        </div>
+      </td>
+      <td>
+        <p class="fw-normal mb-1">2:00 AM</p>
+      </td>
+      <td>Mumbai</td>
+      <td>San Francisco</td>
+      <td>9:00</td>
+      <td><span class="badge badge-danger rounded-pill d-inline">Delayed</span></td>
+      <td>G5</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS69qG4AekDdK-l0ImjkhjkjW-66ZEo8fTRsA&usqp=CAU"
+            alt="" style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Emirates</p>
+          </div>
+        </div>
+      </td>
+      <td>8:00 AM</td>
+      <td>Coimbatore</td>
+      <td>Seattle</td>
+      <td>17:00</td>
+      <td><span class="badge badge-dark rounded-pill d-inline">Departed</span></td>
+      <td>C3</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrhxBxS2-tvVtFnV0l1insQFpDjiYhxSL543hISAXIXHlrgbTx6CF8jY1Fb4Ykr-I4i1A&usqp=CAU"
+            alt="" style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">American Airlines</p>
+          </div>
+        </div>
+      </td>
+      <td>12:00 PM</td>
+      <td>Pune</td>
+      <td>Sydney</td>
+      <td>8:00</td>
+      <td><span class="badge badge-warning rounded-pill d-inline">Final call</span> </td>
+      <td>S9</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://1000logos.net/wp-content/uploads/2020/03/Air-Canada-Logo-1994.jpg" alt=""
+            style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Air Canada</p>
+          </div>
+        </div>
+      </td>
+      <td>6:00 AM</td>
+      <td>Puducherry</td>
+      <td>Toronto</td>
+      <td>17:00</td>
+      <td><span class="badge badge-success rounded-pill d-inline">Boarding</span></td>
+      <td>B6</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+
+    </tr>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://logos-world.net/wp-content/uploads/2021/02/British-Airways-Emblem.jpg" alt=""
+            style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Emirates</p>
+          </div>
+        </div>
+      </td>
+      <td>8:00 AM</td>
+      <td>Coimbatore</td>
+      <td>London</td>
+      <td>17:00</td>
+      <td><span class="badge badge-danger rounded-pill d-inline">Delayed</span></td>
+      <td>H7</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img src="https://logos-download.com/wp-content/uploads/2016/03/Qatar_Airways_logo.png" alt=""
+            style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Qatar Airways</p>
+          </div>
+        </div>
+      </td>
+      <td>9:00 AM</td>
+      <td>Chennai</td>
+      <td>Melbourne</td>
+      <td>14:00</td>
+      <td><span class="badge badge-primary rounded-pill d-inline">Read to take off</span></td>
+      <td>C3</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Turkish_Airlines_logo_2019_compact.svg/1024px-Turkish_Airlines_logo_2019_compact.svg.png"
+            alt="" style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Turkish Airlines</p>
+          </div>
+        </div>
+      </td>
+      <td>9:00 PM</td>
+      <td>Delhi</td>
+      <td>Istanbul</td>
+      <td>18:00</td>
+      <td><span class="badge badge-dark rounded-pill d-inline">Departed</span></td>
+      <td>A16</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="d-flex align-items-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Singapore_Airlines_Logo_2.svg/640px-Singapore_Airlines_Logo_2.svg.png"
+            alt="" style="width: 105px; height: 65px" />
+          <div class="ms-3">
+            <p class="fw-bold mb-1">Singapore Airlines</p>
+          </div>
+        </div>
+      </td>
+      <td>4:00 AM</td>
+      <td>Coimbatore</td>
+      <td>Singapore</td>
+      <td>7:00</td>
+      <td><span class="badge badge-warning  d-inline">Final call</span></td>
+      <td>R3</td>
+      <td><i class="fa fa-edit fa-2x" style="color:blue"></i></td>
+      <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<!-- Time=new Date().getHours;
+    From: String ='';
+    To:  String ='';
+    ETD=new Date().getHours;
+    Status: String ='';
+    Gate: String =''; -->
+<h3 class="text-center">AVAILABLE FLIGHTS</h3>
+<table class="table bg-white">
+  <thead style="background-color: skyblue;">
+    <tr>
+      <th>Time</th>
+      <th>From</th>
+      <th>To</th>
+      <th>ETD</th>
+      <th>Status</th>
+      <th>Gate</th>
+      <!-- <th>Action</th> -->
+      <th>Ticket</th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let table of flightTableService.dropList">
+    <td>{{table.Time}}</td>
+    <td>{{table.From}}</td>
+    <td>{{table.To}}</td>
+    <td>{{table.ETD}}</td>
+    <!-- FINAL CALL -->
+    <td *ngIf="table.Status=='Final call'">
+      <span [ngStyle]="{'background-color':'orange','color':'white','border-radius':'10px'}">{{table.Status}}</span>
+    </td>
+    <!-- DELAYED -->
+    <td *ngIf="table.Status=='Delayed'">
+      <span [ngStyle]="{'background-color':'red','color':'white','border-radius':'15px','height':'10%'}">{{table.Status}}</span>
+    </td>
+    <!-- BOARDING -->
+    <td *ngIf="table.Status=='Boarding'">
+      <span [ngStyle]="{'background-color':'green','color':'white','border-radius':'20px','height':'10%'}">{{table.Status}}</span>
+    </td>
+    <!-- DEPARTED -->
+    <td *ngIf="table.Status=='Departed'">
+      <span [ngStyle]="{'background-color':'black','color':'white','border-radius':'20px','height':'10%'}">{{table.Status}}</span>
+    </td>
+    <!-- READY TO TAKE OFF -->
+    <td *ngIf="table.Status=='Ready to take off'">
+      <span [ngStyle]="{'background-color':'blue','color':'white','border-radius':'20px','height':'10%'}">{{table.Status}}</span>
+    </td>
+    <td>{{table.Gate}}</td>
+    <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>  
+  </tr>
+</table>

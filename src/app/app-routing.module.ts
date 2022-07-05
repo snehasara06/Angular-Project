@@ -9,38 +9,35 @@ import { TrainComponent } from './train/train.component';
 import { VacayComponent } from './vacay/vacay.component';
 import { HomeComponent } from './home/home.component';
 import { FlightSummaryComponent } from './flight-summary/flight-summary.component';
+import { FlightTableComponent } from './flight-table/flight-table.component';
+import { AuthGuardGuard } from './auth-guard.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'vacay', component: VacayComponent },
-  { path: 'flights', component: FlightsComponent },
-  {path: 'flights/bookFlight', component: BookFlightComponent},
-
+  { path: 'vacay', component: VacayComponent,canActivate:[AuthGuardGuard]},
+  { path: 'flights', component: FlightsComponent, canActivate:[AuthGuardGuard]},
+  { path: 'flights/flightTable', component: FlightTableComponent ,canActivate:[AuthGuardGuard]},
+  { path: 'flights/flightTable/bookFlight', component: BookFlightComponent ,canActivate:[AuthGuardGuard]},
   {
     path: 'flights',
-    children: [
-      {
+    children: [{
+      path: 'flightTable',
+      //component: BookFlightComponent,
+      children: [{
         path: 'bookFlight',
-        //component: BookFlightComponent,
-        children: [
-          {
-            path: 'flightSummary',
-            component: FlightSummaryComponent
-          }
-        ]
-      }
-
-
-    ]
-
-
+        // component: FlightSummaryComponent,
+        children: [{
+          path: 'flightSummary',
+          component: FlightSummaryComponent,
+          canActivate:[AuthGuardGuard]
+        }]
+      }]
+    }]
   },
-
-  { path: 'train', component: TrainComponent },
-  { path: 'bus', component: BusComponent },
-
+  { path: 'train', component: TrainComponent,canActivate:[AuthGuardGuard] },
+  { path: 'bus', component: BusComponent,canActivate:[AuthGuardGuard] },
 ];
 
 @NgModule({

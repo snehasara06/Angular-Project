@@ -248,12 +248,12 @@
                     <h3 class="display py-2 text-truncate">Passenger Details</h3>
                     <br/>
                     <!-- <br/> -->
-                    <div class="icon">
-                        <i class="bi bi-trash"></i>Clear
-                    </div>
+                    <span class="icon">
+                        <i class="bi bi-trash"(click)="resetForm(flight)"></i>Clear
+                    </span>
                     <!-- <span class='bi bi-trash' style='color: red'>Red icon</span> -->
                     <div class="px-2">
-                        <form action="" class="justify-content-center">
+                        <form action="" class="justify-content-center" #flight="ngForm">
                             <!-- <div class="form-group">
                                 <label class="sr-only">Name</label>
                                 <input type="text" class="form-control" placeholder="Jane Doe">
@@ -267,11 +267,11 @@
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <label for="inputEmail4" class="form-label">First name</label>
-                                    <input type="email" class="form-control" id="inputEmail4">
+                                    <input type="text" class="form-control" id="inputEmail4">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputPassword4" class="form-label">Last name</label>
-                                    <input type="password" class="form-control" id="inputPassword4">
+                                    <input type="text" class="form-control" id="inputPassword4">
                                 </div>
 
                             </div>

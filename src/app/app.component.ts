@@ -12,14 +12,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     // throw new Error('Method not implemented.');
-    this.getDataFromAPI();
+    // this.getDataFromAPI();
   }
-  getDataFromAPI() {
-    this.service.getData().subscribe((res) => {
-      console.log('Response from API is  ', res)
-    }, (error:any) => {
+  // getDataFromAPI() {
+  //   this.service.getData().subscribe((res) => {
+  //     console.log('Response from API is  ', res)
+  //   }, (error:any) => {
 
-    })
-  }
+  //   })
+  // }
 
 }

@@ -109,8 +109,15 @@
 
                             <div class="input-group">
                                 <img src="assets/images/depart.jpeg" style="width: 50px;">
-                                <input type="text" placeholder="City or Airport" class="form-control"
-                                    [(ngModel)]="depart" name="depart">
+                                <!-- <input type="text" placeholder="City or Airport" class="form-control"
+                                    [(ngModel)]="depart" name="depart"> -->
+                                    <!-- <select *ngFor="let list of arrayDrop">
+                                        <option value="{{list.departure}}">{{list.departure}}</option><br>
+                                    </select> -->
+                                    <select>
+                                        <option value="" hidden>From</option>
+                                        <option *ngFor="let list of arrayDrop" value="{{list.departure}}">{{list.departure}}</option>
+                                    </select>
 
 
 
@@ -122,7 +129,12 @@
 
                                 <img src="assets/images/arrival.jpeg" style="width: 50px;">
 
-                                <input type="text" placeholder="Anywhere" class="form-control">
+                                <!-- <input type="text" placeholder="Anywhere" class="form-control" [(ngModel)]="arrive"
+                                    name="arrive"> -->
+                                    <select>
+                                        <option value="" hidden>To</option>
+                                        <option *ngFor="let list of arrayDrop">{{list.departure}}</option>
+                                    </select>
                                 <!-- <span class="material-icons">airline_  seat_recline_extra</span>   -->
 
                                 <!-- <i class="fa-duotone fa-seat-airline"></i> -->
@@ -141,7 +153,7 @@
                             </div>
                             <br />
                             <br />
-                            <button [routerLink]="['./bookFlight']" class="btn btn-info" (click)="onSubmit()">Search
+                            <button [routerLink]="['./flightTable']" class="btn btn-info" (click)="onSubmit()">Search
                                 Flights</button>
 
 

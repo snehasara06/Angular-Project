@@ -1,90 +1,83 @@
-<!-- <p>register works!</p>
-<div class="form-row">
-<div class="col-7">
-    <input type="text" class="form-control" placeholder="City">
-  </div>
-  <div class="col">
-    <input type="text" class="form-control" placeholder="State">
-  </div>
-  <div class="col">
-    <input type="text" class="form-control" placeholder="Zip">
-  </div>
-</div> -->
-<form class="container">
-
+<form class="form-container rounded" #registerForm="ngForm">
   <div class="col-md-4 offset-md-4">
     <div class="form-row">
       <div class="col-md mb-3">
         <h1 style="text-align:center;">REGISTER</h1>
+        <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="loginService._id"> -->
+        <div>
+          <label><b>Role</b></label>
+          <br>
+          <select #role="ngModel" [(ngModel)]="loginService.role" name="role" class="form-select"
+              [class.is-invalid]="role.invalid && role.touched" required>
+              <option value="" hidden>Select your Role</option>
+              <option value="Employee">User</option>
+              <option value="Manager">Admin</option>
+          </select><br>
+          <small class="text-danger" [class.d-none]="role.valid||role.untouched">Select Role</small>
 
-        <label for="validationDefault01">FirstName</label>
-        <input type="text" class="form-control" id="validationDefault01" placeholder="FirstName" required>
       </div>
+        <label ><b>Name</b></label>
+        <br>
+        <input type="text" #name="ngModel" class="form-control" 
+        pattern="^[A-Za-z]{3,}$" [class.is-invalid]="name.invalid && name.touched"
+        name="name"[(ngModel)]="loginService.name"  placeholder="Enter your name" required>
+        <small class="text-danger" [class.d-none]="name.valid || name.untouched">Enter valid name</small>
+
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md mb-3">
+        <label ><b>Email ID</b></label>
+        <br>
+        <input type="text"  
+        #mailId="ngModel" 
+        class="form-control" 
+        pattern="^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+        [class.is-invalid]="mailId.invalid && mailId.touched" 
+        name="mailId"
+        [(ngModel)]="loginService.mailId"
+        placeholder="Enter your email id" 
+        required>
+        <small class="text-danger" [class.d-none]="mailId.valid || mailId.untouched">Enter valid mail ID</small>
+
       </div>
 
-      <div class="form-row">
-
-
-        <div class="col-md mb-3">
-          <label for="validationDefault02">LastName</label>
-          <input type="text" class="form-control" id="validationDefault02" placeholder="LastName" required>
+    </div>
+    <div class="form-row">
+      <div class="col-md mb-3">
+        <label ><b>Password</b></label>
+        <br>
+        <input type="password"  #pass1="ngModel" 
+        class="form-control" 
+        pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+        [class.is-invalid]="pass1.invalid && pass1.touched"
+        name="pass1"
+        [(ngModel)]="loginService.pass1"
+        (keyup)="checkPass($event)"
+        placeholder=" Please enter your password"
+        required>
+        <small class="text-danger" *ngIf="pass1.errors?.['required']" [class.d-none]="pass1.untouched">Enter your Password</small>
+        <small *ngIf="pass1.errors?.['pattern']" class="text-danger" [class.d-none]="pass1.untouched||pass1.valid">Password must start with Alphabet and contain 8 letters with atleast one number</small>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md mb-3">
+        <label><b>Confirm Password</b></label>
+        <br>
+        <input type="password"  #pass2="ngModel" 
+        class="form-control" 
+        [class.is-invalid]="pass2.invalid && pass2.touched"
+        name="pass2"
+        [(ngModel)]="loginService.pass2"
+        (keyup)="checkPass($event)"
+        placeholder="Confirm Password" required>
+        <small class="text-danger" *ngIf="pass2.errors?.['required']; else elseBlock" [class.d-none]="pass2.untouched">Enter your Password</small>
+            <ng-template #elseBlock><small *ngIf="visible && pass2.touched " class="text-danger">Password does not match</small></ng-template>
         </div>
       </div>
-      <div class="form-row">
-
-        <div class="col-md mb-3">
-          <label for="validationEmail">Email ID</label>
-          <input type="text" class="form-control" id="validationEmail" placeholder="Email ID" required>
-        </div>
-      </div>
-      <div class="form-row">
-
-        <div class="col-md mb-3">
-          <label for="Gender">Gender</label><br />
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline1">Male</label>
-          </div>
-          <div class="custom-control custom-radio custom-control-inline">
-            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-            <label class="custom-control-label" for="customRadioInline2">Female</label>
-          </div>
-        </div>
-      </div>
-      <div class="form-row">
-
-
-        <div class="col-md mb-3">
-          <label for="validationPass1">State: </label>
-          <select class="custom-select">
-            <option></option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-row">
-
-
-
-        <div class="col-md mb-3">
-          <label for="validationPass1">Password</label>
-          <input type="password" class="form-control" id="validationPass1" placeholder="Password" required>
-        </div>
-      </div>
-      <div class="form-row">
-
-        <div class="col-md mb-3">
-          <label for="validationPass2">Confirm Password</label>
-          <input type="password" class="form-control" id="validationPass2" placeholder="Confirm Password" required>
-        </div>
-      </div>
-      <div class="form-row">
-
-        <div class="col-md offset-md-5">
-
-          <button class="btn btn-primary" type="submit">Register</button>
-        </div>
-      </div>
-      <!-- </form> -->
+    
+    <div class="text-center">
+      <button class="btn btn-info btn-sm" type="submit" (click)="register(registerForm)">Register</button>
+    </div>
+  </div>
+</form>

@@ -32,7 +32,7 @@ form:before {
 }
 label,
 p{
-    color: white;
+    color: black;
     font-size:medium;
     font-weight: 700;
 }
@@ -51,3 +51,6 @@ p{
     // border-color: aqua;
   }
 
+input{
+    outline: skyblue;
+}

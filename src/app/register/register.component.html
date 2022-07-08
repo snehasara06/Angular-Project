@@ -3,15 +3,14 @@
     <div class="form-row">
       <div class="col-md mb-3">
         <h1 style="text-align:center;">REGISTER</h1>
-        <!-- <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="loginService._id"> -->
         <div>
           <label><b>Role</b></label>
           <br>
-          <select #role="ngModel" [(ngModel)]="loginService.role" name="role" class="form-select"
+          <select #role="ngModel" [(ngModel)]="dataService.role" name="role" class="form-select"
               [class.is-invalid]="role.invalid && role.touched" required>
               <option value="" hidden>Select your Role</option>
-              <option value="Employee">User</option>
-              <option value="Manager">Admin</option>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
           </select><br>
           <small class="text-danger" [class.d-none]="role.valid||role.untouched">Select Role</small>
 
@@ -20,7 +19,7 @@
         <br>
         <input type="text" #name="ngModel" class="form-control" 
         pattern="^[A-Za-z]{3,}$" [class.is-invalid]="name.invalid && name.touched"
-        name="name"[(ngModel)]="loginService.name"  placeholder="Enter your name" required>
+        name="name"[(ngModel)]="dataService.name"  placeholder="Enter your name" required>
         <small class="text-danger" [class.d-none]="name.valid || name.untouched">Enter valid name</small>
 
       </div>
@@ -35,7 +34,7 @@
         pattern="^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
         [class.is-invalid]="mailId.invalid && mailId.touched" 
         name="mailId"
-        [(ngModel)]="loginService.mailId"
+        [(ngModel)]="dataService.mailId"
         placeholder="Enter your email id" 
         required>
         <small class="text-danger" [class.d-none]="mailId.valid || mailId.untouched">Enter valid mail ID</small>
@@ -47,32 +46,32 @@
       <div class="col-md mb-3">
         <label ><b>Password</b></label>
         <br>
-        <input type="password"  #pass1="ngModel" 
+        <input type="password"  #password="ngModel" 
         class="form-control" 
         pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-        [class.is-invalid]="pass1.invalid && pass1.touched"
-        name="pass1"
-        [(ngModel)]="loginService.pass1"
+        [class.is-invalid]="password.invalid && password.touched"
+        name="password"
+        [(ngModel)]="dataService.password"
         (keyup)="checkPass($event)"
         placeholder=" Please enter your password"
         required>
-        <small class="text-danger" *ngIf="pass1.errors?.['required']" [class.d-none]="pass1.untouched">Enter your Password</small>
-        <small *ngIf="pass1.errors?.['pattern']" class="text-danger" [class.d-none]="pass1.untouched||pass1.valid">Password must start with Alphabet and contain 8 letters with atleast one number</small>
+        <small class="text-danger" *ngIf="password.errors?.['required']" [class.d-none]="password.untouched">Enter your Password</small>
+        <small *ngIf="password.errors?.['pattern']" class="text-danger" [class.d-none]="password.untouched||password.valid">Password must start with Alphabet and contain 8 letters with atleast one number</small>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md mb-3">
         <label><b>Confirm Password</b></label>
         <br>
-        <input type="password"  #pass2="ngModel" 
+        <input type="password"  #confirmPassword="ngModel" 
         class="form-control" 
-        [class.is-invalid]="pass2.invalid && pass2.touched"
-        name="pass2"
-        [(ngModel)]="loginService.pass2"
+        [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"
+        name="confirmPassword"
+        [(ngModel)]="dataService.confirmPassword"
         (keyup)="checkPass($event)"
         placeholder="Confirm Password" required>
-        <small class="text-danger" *ngIf="pass2.errors?.['required']; else elseBlock" [class.d-none]="pass2.untouched">Enter your Password</small>
-            <ng-template #elseBlock><small *ngIf="visible && pass2.touched " class="text-danger">Password does not match</small></ng-template>
+        <small class="text-danger" *ngIf="confirmPassword.errors?.['required']; else elseBlock" [class.d-none]="confirmPassword.untouched">Enter your Password</small>
+            <ng-template #elseBlock><small *ngIf="visible && confirmPassword.touched " class="text-danger">Password does not match</small></ng-template>
         </div>
       </div>
     
@@ -81,3 +80,26 @@
     </div>
   </div>
 </form>
+<!-- 
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">Register</h3>
+        </div>
+        <div class="card-body">
+          <form class="form">
+            <div class="form-group">
+              <label for="">Mail Id</label>
+              <input [(ngModel)]="registerUserData.email"  name="email" type="text" class="form-control rounded-0" required>
+            </div>
+            <div class="form-group">
+              <label for="">Password</label>
+              <input  [(ngModel)]="registerUserData.pass"  name="pass" type="text" class="form-control rounded-0" required>
+            </div>
+            <button (click)="registerUser()" type="button" class="btn btn-info float-right">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div> -->

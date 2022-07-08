@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from '../Services/Login/login.service';
+import { AuthService } from '../Services/Auth/auth.service';
+import { DataService } from '../Services/Data/data.service';
 
 @Component({
   selector: 'app-login',
@@ -12,26 +13,25 @@ export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
 
-  constructor(public loginService: LoginService, private router: Router) { }
+  constructor(public dataService: DataService, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void { }
 
-  login(form: NgForm) {
-    this.loginService.login(form.value).subscribe((data: any) => {
-      this.loginService.role = data.user.role
-      if (this.loginService.loginRole == "Admin") {
-        localStorage.setItem('role', data.user.role);
-      }
-      localStorage.setItem('token', data.token)
-      form.reset()
-    }, (error) => {
-      console.log("Error in Login ts");
-    })
+  login(loginForm: NgForm) {
+    console.log('Logged in!')
+    console.log(loginForm.value);
+
+    this.auth.loginUser(loginForm.value)
+      .subscribe(
+        res => {
+          console.log(res)
+          localStorage.setItem('token', res.token)
+          this.router.navigate(['vacay'])
+        },
+        err => { console.log(err) }
+
+      )
   }
 
-  signUp() {
-    this.router.navigate(['/register'])
-  }
-
-
+  
 }

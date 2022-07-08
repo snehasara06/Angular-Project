@@ -1,98 +1,30 @@
-<!-- <p>flights works!</p> -->
-<!-- <br />
-<br />
-<section id="cover">
-<form class="container" #flight="ngForm"> -->
-<!-- <i class='fa fa-plane fa-2x' style='color:#0d4487'></i> -->
-
-<!-- <img src="assets/images/plane.png" style="width: 30px;">
-    <select>
-        <option value="round">Round trip</option>
-        <option value="one">One way</option>
-        <option value="multi">Multi city</option>
-    </select> -->
-<!-- <i class="fa fa-plane fa-2x" style="color: rgb(49, 49, 177);" aria-hidden="true"  ></i> -->
-<!-- <i class="fi-icon fi-icon_seat"></i> -->
-
-<!-- <i class="fas fa-plane"></i> -->
-<!-- <img src="assets/images/seat1.png" style="width: 30px;">
-    <select>
-        <option value="economy">Economy</option>
-        <option value="premeco">Premium Economy</option>
-        <option value="business">Business</option>
-        <option value="first">First</option>
-    </select>
-    <br>
-    <br> -->
-<!-- <i class='fa fa-plane-departure' style='color:#63c6d9'></i> -->
-<!-- <i class='fa fa-plane f  fa-3x'></i> fa-rotate-270<br/><br/>  -->
-<!-- <i class='fa fa-plane fa-flip-horizontal fa-3x'></i> fa-flip-vertical<br> -->
-
-<!-- <div class="input-group">
-    <img src="assets/images/depart.jpeg" style="width: 50px;">
-    <input type="text" placeholder="City or Airport"  class="form-control input-sm" [(ngModel)]="depart" name="depart"> -->
-<!-- <i class='fa fa-plane' style='color:#4eb7e4'></i> -->
-<!-- <i class='fa fa-exchange-alt' style='font-size:36px'></i> -->
-<!-- <i class='fa fa-exchange-alt'>fa-exchange-alt</i> -->
-<!-- <i class="fa fa-exchange fa-2x" style="color: #4bbfdc;"></i>	-->
-<!-- <img src="assets/images/to.jfif" style="width: 30px;"> -->
-
-<!-- <img src="assets/images/arrival.jpeg" style="width: 50px;">
-
-    <input type="text" placeholder="Anywhere"  class="form-control input-sm"> -->
-<!-- <span class="material-icons">airline_  seat_recline_extra</span>   -->
-
-<!-- <i class="fa-duotone fa-seat-airline"></i> -->
-
-<!-- <br />
-    <br />
-
-    <span class="input-group-btn" style="width:10px;"></span>
-    <label>From</label>
-    <span class="input-group-btn" style="width:10px;"></span>
-    <input type="date" placeholder="From"   class="form-control input-sm">
-    <span class="input-group-btn" style="width:10px;"></span>
-    <label>To</label>
-    <span class="input-group-btn" style="width:10px;"></span>
-    <input type="date" placeholder="To" class="form-control input-sm">
-    </div>
-<br />
-<br />
-        <button [routerLink]="['./bookFlight']" class="btn btn-info" (click)="onSubmit()">Search Flights</button>
-</form>
-
-
-</section> -->
-
-
-
 <section id="cover">
     <div id="cover-caption">
         <div class="container">
             <div class="row text-white">
                 <div class="col-xl-10 col-lg-8 col-md-9 col-sm-14 mx-auto text-center form p-6">
-                    <!-- <h1 class="display-4 py-2 text-truncate">Center my form.</h1> -->
                     <div class="px-2">
-                        <form action="" class="justify-content-center">
+                        <form action="" class="justify-content-center" #flightDataForm="ngForm">
                             <div class="form-row justify-content-center">
                                 <div class="col-md-3">
                                     <div class="input-group ">
                                         <img src="assets/images/planeIcon.png" style="width: 45px;">
-                                        <select class="form-select">
+                                        <select class="form-select" name="trip" [(ngModel)]="flightData.trip">
+                                            <option value="" hidden>Trip</option>
+
                                             <option value="round">Round trip</option>
                                             <option value="one">One way</option>
                                             <option value="multi">Multi city</option>
                                         </select>
                                     </div>
                                 </div>
-                                <!-- <i class="fa fa-plane fa-2x" style="color: rgb(49, 49, 177);" aria-hidden="true"  ></i> -->
-                                <!-- <i class="fi-icon fi-icon_seat"></i> -->
 
-                                <!-- <i class="fas fa-plane"></i> -->
                                 <div class="col-md-3">
                                     <div class="input-group">
                                         <img src="assets/images/seat1.png" style="width: 40px;">
-                                        <select class="form-select">
+                                        <select class="form-select" name="seat" [(ngModel)]="flightData.seat">
+                                            <option value="" hidden>Class</option>
+
                                             <option value="economy">Economy</option>
                                             <option value="premeco">Premium Economy</option>
                                             <option value="business">Business</option>
@@ -103,41 +35,27 @@
                             </div>
                             <br>
                             <br>
-                            <!-- <i class='fa fa-plane-departure' style='color:#63c6d9'></i> -->
-                            <!-- <i class='fa fa-plane f  fa-3x'></i> fa-rotate-270<br/><br/>  -->
-                            <!-- <i class='fa fa-plane fa-flip-horizontal fa-3x'></i> fa-flip-vertical<br> -->
 
                             <div class="input-group">
                                 <img src="assets/images/depart.jpeg" style="width: 50px;">
-                                <!-- <input type="text" placeholder="City or Airport" class="form-control"
-                                    [(ngModel)]="depart" name="depart"> -->
-                                    <!-- <select *ngFor="let list of arrayDrop">
-                                        <option value="{{list.departure}}">{{list.departure}}</option><br>
-                                    </select> -->
-                                    <select>
-                                        <option value="" hidden>From</option>
-                                        <option *ngFor="let list of arrayDrop" value="{{list.departure}}">{{list.departure}}</option>
-                                    </select>
+
+                                <select class="form-select" #name="ngModel" name="depart"
+                                    [(ngModel)]="flightData.depart">
+                                    <option value="" hidden>From</option>
+                                    <option *ngFor="let list of arrayDrop" value="{{list.departure}}">{{list.departure}}
+                                    </option>
+                                </select>
 
 
 
-                                <!-- <i class='fa fa-plane' style='color:#4eb7e4'></i> -->
-                                <!-- <i class='fa fa-exchange-alt' style='font-size:36px'></i> -->
-                                <!-- <i class='fa fa-exchange-alt'>fa-exchange-alt</i> -->
-                                <!-- <i class="fa fa-exchange fa-2x" style="color: #4bbfdc;"></i>	-->
-                                <!-- <img src="assets/images/to.jfif" style="width: 30px;"> -->
+
 
                                 <img src="assets/images/arrival.jpeg" style="width: 50px;">
 
-                                <!-- <input type="text" placeholder="Anywhere" class="form-control" [(ngModel)]="arrive"
-                                    name="arrive"> -->
-                                    <select>
-                                        <option value="" hidden>To</option>
-                                        <option *ngFor="let list of arrayDrop">{{list.departure}}</option>
-                                    </select>
-                                <!-- <span class="material-icons">airline_  seat_recline_extra</span>   -->
-
-                                <!-- <i class="fa-duotone fa-seat-airline"></i> -->
+                                <select name="arrival" [(ngModel)]="flightData.arrival" class="form-select">
+                                    <option value="" hidden>To</option>
+                                    <option *ngFor="let list of arrayDrop">{{list.departure}}</option>
+                                </select>
 
                                 <br />
                                 <br />
@@ -145,39 +63,22 @@
                                 <span class="input-group-btn" style="width:10px;"></span>
                                 <label>From</label>
                                 <span class="input-group-btn" style="width:10px;"></span>
-                                <input type="date" placeholder="From" class="form-control input-sm">
+                                <input type="date" placeholder="From" class="form-control input-sm" min="2022-07-08"
+                                    name="from" [(ngModel)]="flightData.from">
+
+
+
                                 <span class="input-group-btn" style="width:10px;"></span>
                                 <label>To</label>
                                 <span class="input-group-btn" style="width:10px;"></span>
-                                <input type="date" placeholder="To" class="form-control input-sm">
+                                <input type="date" placeholder="To" class="form-control input-sm" name="to"
+                                    min="2022-07-08" [(ngModel)]="flightData.to">
                             </div>
                             <br />
                             <br />
-                            <button [routerLink]="['./flightTable']" class="btn btn-info" (click)="onSubmit()">Search
+                            <button class="btn btn-info" (click)="onSubmit(flightDataForm)"
+                                [disabled]="flightDataForm.form.invalid">Search
                                 Flights</button>
-
-
-
-
-
-
-
-
-
-                            <!-- <div class="form-group">
-                                <label class="sr-only">Name</label>
-                                <input type="text" class="form-control" placeholder="Jane Doe">
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only">Email</label>
-                                <input type="text" class="form-control" placeholder="jane.doe@example.com">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-lg">Launch</button> -->
-
-
-
-
-
                         </form>
                     </div>
                 </div>

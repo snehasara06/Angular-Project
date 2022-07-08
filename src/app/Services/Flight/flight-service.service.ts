@@ -9,6 +9,9 @@ import { Flight } from 'src/app/Models/flight';
 export class FlightServiceService {
   newTicket!: Flight;
   ticket: Flight[] = [];
+  tempData:any=[];
+flight:any=[];
+
   readonly url = 'http://localhost:8080/flightData/'
 
   constructor(public http: HttpClient,private router:Router) { }
@@ -50,5 +53,23 @@ export class FlightServiceService {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
     this.router.navigate(['/login'])
+  }
+
+// Book flight component
+  set setTempData(value: Object) {
+    this.tempData = value;
+    console.log(this.tempData);
+  }
+  get getTempData() {
+    return this.tempData;
+  }
+// Flight  component
+  set setData(value:Object){
+    this.flight=value;
+    // console.log(this.flight);
+  }
+
+  get getFlight(){
+    return this.flight;
   }
 }

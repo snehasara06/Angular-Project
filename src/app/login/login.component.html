@@ -6,10 +6,10 @@
                     <h1 style="text-align:center;">LOGIN</h1>
                     <!-- <label for="emailId"><b>Email ID</b></label> -->
                     <br>
-                    <input type="email" #email="ngModel" class="form-control" id="email" name="email"
-                        [class.is-invalid]="email.invalid && email.touched" [(ngModel)]="loginService.email" required
+                    <input type="mailId" #mailId="ngModel" class="form-control" id="mailId" name="mailId"
+                        [class.is-invalid]="mailId.invalid && mailId.touched" [(ngModel)]="dataService.mailId" required
                         placeholder="Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                    <small class="text-danger" [class.d-none]="email.valid||email.untouched">Enter your email ID</small>
+                    <small class="text-danger" [class.d-none]="mailId.valid||mailId.untouched">Enter your mailId ID</small>
                 </div>
             </div>
             <div class="form-row">
@@ -18,7 +18,7 @@
                     <!-- <label for="password"><b>Password</b></label> -->
                     <input type="password" #password="ngModel" pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
                         class="form-control" id="password" name="password"
-                        [class.is-invalid]="password.invalid && password.touched" [(ngModel)]="loginService.password"
+                        [class.is-invalid]="password.invalid && password.touched" [(ngModel)]="dataService.password"
                         required placeholder="Password">
                     <small class="text-danger" *ngIf="password.errors?.['required']"
                         [class.d-none]="password.untouched">Enter your Password</small>
@@ -37,6 +37,6 @@
     <hr>
     <div class="text-center">
         <label class="newLabel">Don't have an account?</label>
-        <button class="btn btn-link" (click)="signUp()"><span>Sign Up</span></button>
+        <button class="btn btn-link"  [routerLink]="['/register']"><span>Sign Up</span></button>
     </div>
 </form>

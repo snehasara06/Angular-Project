@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Login } from '../Models/Login/login';
-import { LoginService } from '../Services/Login/login.service';
-
+import { dataUser } from '../Models/dataUser';
+import { AuthService } from '../Services/Auth/auth.service';
+import { DataService } from '../Services/Data/data.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  providers: [LoginService]
+  providers: [DataService]
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(public loginService: LoginService, private router: Router) { }
+  constructor(public dataService: DataService, private router: Router, private auth: AuthService) { }
   visible: boolean = false;
-  registerUser!: Login;
-  checkPass(e: Event) {
-    if (this.loginService.pass1 == this.loginService.pass2) {
+  registerUser!: dataUser;
+
+    checkPass(e: Event) {
+    if (this.dataService.password == this.dataService.confirmPassword) {
       this.visible = false;
     }
     else {
@@ -25,16 +26,25 @@ export class RegisterComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  register(form: NgForm) {
-    // this.loginService.postUser(form.value).subscribe((data: any) => {
-    //   console.log(data.token);
-    //   localStorage.setItem('token', data.token)
-    //   window.alert("Successfully registered:)");
+  register(registerForm: NgForm) {
     console.log('Registered')
-      this.router.navigate(['/']);
-    // })
+    console.log(registerForm.value);
+
+    this.auth.registerUser(registerForm.value)
+      .subscribe(
+        res => {
+          console.log(res)
+          localStorage.setItem('token', res.token)
+          this.router.navigate(['vacay'])
+
+        },
+        err => {
+          console.log(err)
+        }
+      )
+   
   }
-  cancel(){
+  cancel() {
     this.router.navigate(['login']);
   }
 

@@ -1,23 +1,27 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { LoginService } from '../Login/login.service';
-import { catchError,  throwError } from 'rxjs';
+import { catchError, throwError } from 'rxjs';
+import { AuthService } from '../Auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-  constructor(private loginService: LoginService) { }
+  constructor(private injector: Injector) { }
   intercept(req: HttpRequest<any>, next: HttpHandler) {
+    let authService = this.injector.get(AuthService)
+    console.log(authService.getToken());
+    console.log("TOKENINTERCEPTOR SERVICE: " + req)
     let reqToken = req.clone({
       setHeaders: {
-        Authorization: 'Bearer' + this.loginService.getToken()
+        // Authorization: 'Bearer ' + this.dataService.getToken()
+        Authorization: `Bearer ${authService.getToken()}`
+
       }
     })
     return next.handle(reqToken).pipe(
       catchError((error) => {
-        console.log(error.error);
-        alert(error.message)
+
         return throwError(error)
       })
     )

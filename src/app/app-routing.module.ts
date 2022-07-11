@@ -36,8 +36,8 @@ const routes: Routes = [
       }]
     }]
   },
-  { path: 'train', component: TrainComponent,canActivate:[AuthGuardGuard] },
-  { path: 'bus', component: BusComponent,canActivate:[AuthGuardGuard] },
+  // { path: 'train', component: TrainComponent,canActivate:[AuthGuardGuard] },
+  // { path: 'bus', component: BusComponent,canActivate:[AuthGuardGuard] },
 ];
 
 @NgModule({

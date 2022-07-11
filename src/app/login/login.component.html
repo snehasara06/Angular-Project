@@ -9,7 +9,7 @@
                     <input type="mailId" #mailId="ngModel" class="form-control" id="mailId" name="mailId"
                         [class.is-invalid]="mailId.invalid && mailId.touched" [(ngModel)]="dataService.mailId" required
                         placeholder="Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                    <small class="text-danger" [class.d-none]="mailId.valid||mailId.untouched">Enter your mailId ID</small>
+                    <small class="text-danger" [class.d-none]="mailId.valid||mailId.untouched">Enter your mail ID</small>
                 </div>
             </div>
             <div class="form-row">

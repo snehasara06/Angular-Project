@@ -11,7 +11,6 @@ import { bookFlight } from './bookFlight';
   styleUrls: ['./book-flight.component.scss']
 })
 export class BookFlightComponent implements OnInit {
-  form: number = 0;
 
   firstName: string = '';
   lastName: string = '';
@@ -26,20 +25,8 @@ export class BookFlightComponent implements OnInit {
 
   constructor(
     private flightService: FlightServiceService,
-    private router: Router,
-
-  ) { }
+    private router: Router) { }
   ngOnInit(): void { }
-  toggle() {
-    this.form++;
-    console.log(this.form)
-  }
-  resetForm(form: NgForm) {
-    console.log("Reset form");
-    if (form)
-      form.reset();
-
-  }
   onSubmit(bookFlight: NgForm) {
     console.log(bookFlight.value)
     this.tempData = bookFlight.value;

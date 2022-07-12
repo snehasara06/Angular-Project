@@ -9,12 +9,7 @@ import { DropDownlist } from 'src/app/Models/DropDownList/drop-downlist';
 export class DropDownService {
 
   constructor(private http:HttpClient,private router:Router) { }
-  //   readonly baseUrl="http://localhost:8080/flightTable/";
-  // dropList:Flight[]=[];
-  
-  // getDropList(){
-  //   return this.http.get(this.baseUrl)
-  // }
+ 
   readonly baseUrl="http://localhost:8080/dropDown/";
   dropDown: DropDownlist[]=[];
   getDropDown(){

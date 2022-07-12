@@ -6,7 +6,6 @@
     text-align: center;
     display: flex;
     align-items: center;
-    // padding: 40%;
     position:relative;
     background-position: center;
     background-attachment: fixed;
@@ -18,7 +17,6 @@
     z-index: 1;
 }
 
-/* only used for background overlay not needed for centering */
 form:before {
     content: '';
     height: 100%;
@@ -40,15 +38,9 @@ p{
     color: white;
     font-size: 30px;
     font-weight: bolder;
-    // margin-left: 900px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
     float: right;
-    // padding-right: 1em;
     padding-left: 0.3em;
-    // display: inline;
-    // border-color: aqua;
+    
   }
 
 input{

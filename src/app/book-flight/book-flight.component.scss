@@ -1,6 +1,5 @@
 #cover {
     background: #222 url('https://img.freepik.com/free-photo/airplane-airport-runway-sunset-tasmania_31965-3759.jpg?w=2000') center center no-repeat;
-    // background: #222 url('https://unsplash.it/1920/1080/?random') center center no-repeat;
     background-size: cover;
     height: 100%;
     text-align: center;
@@ -11,7 +10,7 @@
 
 .icon:hover {
     background-color: white;
-  }
+}
 
 
 #cover-caption {
@@ -28,20 +27,23 @@ form:before {
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: -1;
     border-radius: 10px;
 }
-h3{
+
+h3 {
     color: #222;
     font-size: xx-large;
     font-weight: bold;
 }
-i{
+
+i {
     font-size: large;
     color: #222;
 }
-.icon{
+
+.icon {
     text-align: right;
     color: #222;
     margin-left: 400px;

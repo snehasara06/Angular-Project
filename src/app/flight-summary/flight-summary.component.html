@@ -1,97 +1,4 @@
- <!-- <section id="cover">
-    <div id="cover-caption">
-        <div class="container">
-            <div class="row text-white">
-                <div class="col-xl-10 col-lg-8 col-md-9 col-sm-14 mx-auto text-center form p-6">
-                    <div class="px-2">
-                        <span>
-                            <i class="bi bi-save" (click)="save(summaForm)">
-                                <i class="bi bi-download"></i>
-                            </i>
-                        </span>
-
-                        <form action="" class="justify-content-center" [formGroup]="summaForm">
-                            <h4>Booking Date</h4>
-                            <br />
-                            <hr>
-                            <h4>Passenger name</h4>
-                            <input type="text" name="firstName" formControlName="firstName">
-                            <input type="text" name="firstName" formControlName="firstName" readonly>
-                            <input type="text" name="lastName" formControlName="lastName" readonly>
-                            <br />
-                            <hr>
-                            <h4>Flight Details</h4>
-                            <p>Route</p>
-                            <h2>
-
-                            </h2>
-                            <hr>
-                            <div class="input-group">
-                                <p>From</p>
-                                <span class="input-group-btn" style="width:20%;">
-                                    <input type="text" name="from" formControlName="from" readonly>
-
-                                </span>
-                                <p>Airline</p>
-                                <span class="input-group-btn" style="width:24%;"></span> 
-
-                                <p>Departure date</p>
-                                <span class="input-group-btn" style="width:23%;"></span>
-                                <input type="text" name="depart" formControlName="depart" readonly>
-
-
-                                <p>Arrival Date</p>
-                                <input type="text" name="arrival" formControlName="arrival" readonly>
-
-                            </div>
-
-                            <br />
-
-                            <hr>
-                            <div class="input-group">
-
-                                <p>To</p>
-                                <span class="input-group-btn" style="width:20%;"></span>
-                                <input type="text" name="to" formControlName="to" readonly>
-
-
-                                 <p>Flight number</p>
-                                <span class="input-group-btn" style="width:20%;"></span>
-
-                                <p>Departure Terminal</p>
-                                <span class="input-group-btn" style="width:20%;"></span>
-
-                                <p>Arrival Terminal</p> 
-                            </div>
-                            <hr>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>  -->
-
-<!-- <form [formGroup]="summaForm">
-    <h4>Booking Date</h4>
-    <input type="text" name="bookDate" formControlName="bookDate" readonly label="Date.now()">
-    <h4>Passenger name:</h4>
-    <input type="text" name="firstName" formControlName="firstName" readonly>
-    <input type="text" name="lastName" formControlName="lastName" readonly>
-    <h4>Flight Details</h4>
-    <h3>Route:</h3>
-
-    <h3>From</h3>
-    <input type="text" name="from" formControlName="from" readonly>
-    <h3>To</h3>
-    <input type="text" name="to" formControlName="to" readonly>
-    <h3>Departure date</h3>
-    <input type="text" name="depart" formControlName="depart" readonly>
-    <h3>Arrival date</h3>
-    <input type="text" name="arrival" formControlName="arrival" readonly>
-</form>  -->
-
-
+ <!-- <section id="cover"> -->
 <div class="row">
     <div class="col-md-6 mx-auto">
         <div class="card rounded-0">
@@ -99,15 +6,9 @@
                 <h3 class="mb-0">Flight Details</h3>
             </div>
             <div class="card-body">
-                <form class="form" [formGroup]="summaForm">
-                    <!-- <div class="form-group">
-                        <label for="">Mail Id</label>
-                        <input [(ngModel)]="registerUserData.email" name="email" type="text"
-                            class="form-control rounded-0" required>
-                    </div> -->
-                    <div class="form-group">
+                <form class="form" [formGroup]="summaryForm">
+                        <div class="form-group">
                         <label for="">Passenger name</label>
-                        <!-- <input  [(ngModel)]="registerUserData.pass"  name="pass" type="text" class="form-control rounded-0" required> -->
                         <input type="text" name="firstName" formControlName="firstName" readonly class="form-control rounded-0">
                         <input type="text" name="lastName" formControlName="lastName" readonly class="form-control rounded-0">
                     </div>
@@ -116,26 +17,22 @@
                     <div class="form-group">
                         <label for="">From</label>
                         <input type="text" name="from" formControlName="from" readonly class="form-control rounded-0">
-
                     </div>
-
                     <div class="form-group">
                         <label for="">To</label>
                         <input type="text" name="to" formControlName="to" readonly class="form-control rounded-0">
-
                     </div>
                     <div class="form-group">
                         <label for="">Departure date</label>
                         <input type="text" name="depart" formControlName="depart" readonly class="form-control rounded-0">
-
                     </div>
                     <div class="form-group">
                         <label for="">Arrival date</label>
                         <input type="text" name="arrival" formControlName="arrival" readonly class="form-control rounded-0">
-
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<!-- </section> -->

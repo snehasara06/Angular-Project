@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   visible: boolean = false;
   registerUser!: dataUser;
 
-    checkPass(e: Event) {
+  checkPass(e: Event) {
     if (this.dataService.password == this.dataService.confirmPassword) {
       this.visible = false;
     }
@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
       this.visible = true;
     }
   }
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
   register(registerForm: NgForm) {
     console.log('Registered')
     console.log(registerForm.value);
@@ -42,7 +42,6 @@ export class RegisterComponent implements OnInit {
           console.log(err)
         }
       )
-   
   }
   cancel() {
     this.router.navigate(['login']);

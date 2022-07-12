@@ -13,12 +13,12 @@ import { FlightTableService } from '../Services/FlightTable/flight-table.service
 })
 export class FlightTableComponent implements OnInit {
 
-  constructor( public flightTableService: FlightTableService) { }
+  constructor(public flightTableService: FlightTableService) { }
 
   ngOnInit(): void {
     this.flightTableService.getDropList().subscribe((res) => {
-    this.flightTableService.dropList=res as Flight[];
-})
+      this.flightTableService.dropList = res as Flight[];
+    })
   }
   onSubmit(form: NgForm) {
     console.log("Form submitted!")

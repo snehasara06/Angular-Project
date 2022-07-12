@@ -15,4 +15,9 @@ export class FlightTableService {
   getDropList(){
     return this.http.get(this.baseUrl)
   }
+  getAvailableFlights(from:any,to:any){
+  console.log("From Service: "+from);
+  console.log("To Service : "+to)
+  return this.http.get(this.baseUrl+`/${from}`+`/${to}`);
+  }
 }

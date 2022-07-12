@@ -2,29 +2,19 @@ select{
     border: 3px solid skyblue;
     border-radius: 5px;
 }
-// option{
-//     background-color: skyblue;
-// }
+
 .container{
    text-align: center;
-//    background: #222 url('https://img.freepik.com/free-photo/airplane-airport-runway-sunset-tasmania_31965-3759.jpg?w=2000') center center no-repeat;
 
-//    background-color: skyblue;
 }
-// *{
-//     background-color: skyblue;
-// }
+
 #cover {
     background: #222 url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YWlycGxhbmUlMjB3aW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80')center center no-repeat;
-    // background: #222 url('/home/asplap1818/ASPIRE/Angular-Project/src/assets/images/bgFlight.jpeg')center center no-repeat;
-    // background: #222 url('https://c1.wallpaperflare.com/preview/929/926/321/plane-sunset-sunrise-wing.jpg')center center no-repeat;
-    // background: #222 url('https://ecobnb.com/blog/app/uploads/sites/3/2019/09/ross-parmly-rf6ywHVkrlY-unsplash.jpg') center center no-repeat;
     background-size: cover;
     height: 74vh;
     text-align: center;
     display: flex;
     align-items: center;
-    // padding: 40%;
     position:relative;
     background-position: center;
     background-attachment: fixed;
@@ -36,7 +26,6 @@ select{
     z-index: 1;
 }
 
-/* only used for background overlay not needed for centering */
 form:before {
     content: '';
     height: 50%;
@@ -44,7 +33,6 @@ form:before {
     position: absolute;
     top: 0;
     width: 100%;
-    /*background-color: rgba(0,0,0,0.3);*/
     z-index: -1;
     border-radius: 10px;
 }

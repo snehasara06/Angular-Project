@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flight } from '../Models/flight';
 import { FlightServiceService } from '../Services/Flight/flight-service.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../Services/Data/data.service';
 
@@ -58,7 +58,7 @@ export class FlightSummaryComponent implements OnInit {
     console.log("Flight To: " + Object.values(this.fService.getFlight)[5])
   }
 
-  save(summaryForm: FormControl) {
+  saveTicket(summaryForm: FormGroup) {
     console.log(summaryForm.value)
     this.dataService.postFlight(summaryForm.value).subscribe(
       res => {

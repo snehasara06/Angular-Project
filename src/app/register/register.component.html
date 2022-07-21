@@ -3,40 +3,22 @@
     <div class="form-row">
       <div class="col-md mb-3">
         <h1 style="text-align:center;">REGISTER</h1>
-        <div>
-          <label><b>Role</b></label>
-          <br>
-          <select #role="ngModel" [(ngModel)]="dataService.role" name="role" class="form-select"
-              [class.is-invalid]="role.invalid && role.touched" required>
-              <option value="" hidden>Select your Role</option>
-              <option value="user">User</option>
-              <option value="admin">Admin</option>
-          </select><br>
-          <small class="text-danger" [class.d-none]="role.valid||role.untouched">Select Role</small>
-
-      </div>
-        <label ><b>Name</b></label>
+        <label><b>Name</b></label>
         <br>
-        <input type="text" #name="ngModel" class="form-control" 
-        pattern="^[A-Za-z]{3,}$" [class.is-invalid]="name.invalid && name.touched"
-        name="name"[(ngModel)]="dataService.name"  placeholder="Enter your name" required>
+        <input type="text" #name="ngModel" class="form-control" pattern="^[A-Za-z]{3,}$"
+          [class.is-invalid]="name.invalid && name.touched" name="name" [(ngModel)]="dataService.name"
+          placeholder="Enter your name" required>
         <small class="text-danger" [class.d-none]="name.valid || name.untouched">Enter valid name</small>
 
       </div>
     </div>
     <div class="form-row">
       <div class="col-md mb-3">
-        <label ><b>Email ID</b></label>
+        <label><b>Email ID</b></label>
         <br>
-        <input type="text"  
-        #mailId="ngModel" 
-        class="form-control" 
-        pattern="^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
-        [class.is-invalid]="mailId.invalid && mailId.touched" 
-        name="mailId"
-        [(ngModel)]="dataService.mailId"
-        placeholder="Enter your email id" 
-        required>
+        <input type="text" #mailId="ngModel" class="form-control" pattern="^[a-z0-9._-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          [class.is-invalid]="mailId.invalid && mailId.touched" name="mailId" [(ngModel)]="dataService.mailId"
+          placeholder="Enter your email id" required>
         <small class="text-danger" [class.d-none]="mailId.valid || mailId.untouched">Enter valid mail ID</small>
 
       </div>
@@ -44,37 +26,32 @@
     </div>
     <div class="form-row">
       <div class="col-md mb-3">
-        <label ><b>Password</b></label>
+        <label><b>Password</b></label>
         <br>
-        <input type="password"  #password="ngModel" 
-        class="form-control" 
-        pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-        [class.is-invalid]="password.invalid && password.touched"
-        name="password"
-        [(ngModel)]="dataService.password"
-        (keyup)="checkPass($event)"
-        placeholder=" Please enter your password"
-        required>
-        <small class="text-danger" *ngIf="password.errors?.['required']" [class.d-none]="password.untouched">Enter your Password</small>
-        <small *ngIf="password.errors?.['pattern']" class="text-danger" [class.d-none]="password.untouched||password.valid">Password must start with Alphabet and contain 8 letters with atleast one number</small>
+        <input type="password" #password="ngModel" class="form-control" pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+          [class.is-invalid]="password.invalid && password.touched" name="password" [(ngModel)]="dataService.password"
+          (keyup)="checkPass($event)" placeholder=" Please enter your password" required>
+        <small class="text-danger" *ngIf="password.errors?.['required']" [class.d-none]="password.untouched">Enter your
+          Password</small>
+        <small *ngIf="password.errors?.['pattern']" class="text-danger"
+          [class.d-none]="password.untouched||password.valid">Password must start with Alphabet and contain 8 letters
+          with atleast one number</small>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md mb-3">
         <label><b>Confirm Password</b></label>
         <br>
-        <input type="password"  #confirmPassword="ngModel" 
-        class="form-control" 
-        [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"
-        name="confirmPassword"
-        [(ngModel)]="dataService.confirmPassword"
-        (keyup)="checkPass($event)"
-        placeholder="Confirm Password" required>
-        <small class="text-danger" *ngIf="confirmPassword.errors?.['required']; else elseBlock" [class.d-none]="confirmPassword.untouched">Enter your Password</small>
-            <ng-template #elseBlock><small *ngIf="visible && confirmPassword.touched " class="text-danger">Password does not match</small></ng-template>
-        </div>
+        <input type="password" #confirmPassword="ngModel" class="form-control"
+          [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched" name="confirmPassword"
+          [(ngModel)]="dataService.confirmPassword" (keyup)="checkPass($event)" placeholder="Confirm Password" required>
+        <small class="text-danger" *ngIf="confirmPassword.errors?.['required']; else elseBlock"
+          [class.d-none]="confirmPassword.untouched">Enter your Password</small>
+        <ng-template #elseBlock><small *ngIf="visible && confirmPassword.touched " class="text-danger">Password does not
+            match</small></ng-template>
       </div>
-    
+    </div>
+
     <div class="text-center">
       <button class="btn btn-info btn-sm" type="submit" (click)="register(registerForm)">Register</button>
     </div>

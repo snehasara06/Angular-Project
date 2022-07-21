@@ -7,9 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { VacayComponent } from './vacay/vacay.component';
 import { FlightsComponent } from './flights/flights.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TrainComponent } from './train/train.component';
 import { NavigationComponent } from './navigation/navigation.component';
-import { BusComponent } from './bus/bus.component';
 import { BookFlightComponent } from './book-flight/book-flight.component';
 import { HomeComponent } from './home/home.component';
 import { FlightSummaryComponent } from './flight-summary/flight-summary.component';
@@ -22,6 +20,7 @@ import { TokenInterceptorService } from './Services/TokenInterceptor/token-inter
 import { AuthService } from './Services/Auth/auth.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +28,12 @@ import { AuthService } from './Services/Auth/auth.service';
     RegisterComponent,
     VacayComponent,
     FlightsComponent,
-    TrainComponent,
     NavigationComponent,
-    BusComponent,
     BookFlightComponent,
     HomeComponent,
     FlightSummaryComponent,
-    FlightTableComponent
+    FlightTableComponent,
+
   ],
   imports: [
     BrowserModule,

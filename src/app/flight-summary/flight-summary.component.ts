@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Flight } from '../Models/flight';
 import { FlightServiceService } from '../Services/Flight/flight-service.service';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../Services/Data/data.service';
+import { FlightTableService } from '../Services/FlightTable/flight-table.service';
 
 @Component({
   selector: 'app-flight-summary',
@@ -23,8 +23,7 @@ export class FlightSummaryComponent implements OnInit {
 
   constructor(private fService: FlightServiceService,
     private formBuilder: FormBuilder,
-    private router: Router, private acRoute: ActivatedRoute,
-    private dataService: DataService) {
+    private flightTableService: FlightTableService) {
 
     this.summaryForm = this.formBuilder.group({
       firstName: new FormControl('', [Validators.required]),
@@ -35,37 +34,26 @@ export class FlightSummaryComponent implements OnInit {
       depart: new FormControl('', [Validators.required]),
       arrival: new FormControl('', [Validators.required]),
       bookDate: new FormControl('', [Validators.required])
-
     })
   }
-
-
   ngOnInit(): void {
-
-    console.log("Tempdata: " + Object.entries(this.fService.getTempData));
-    console.log("destiny: " + Object.values(this.fService.getTempData)[0]);
+    this.flightTableService.getFlightData(this.flightTableService.getFlightDetail).subscribe((res: any) => {
+     
+      this.summaryForm.patchValue({
+        from: res['data'][0].From,
+        to: res['data'][0].To
+      })
+    })
+    
     this.summaryForm.patchValue({
       firstName: Object.values(this.fService.getTempData)[0],
       lastName: Object.values(this.fService.getTempData)[1],
-      from: Object.values(this.fService.getFlight)[2],
-      to: Object.values(this.fService.getFlight)[3],
-      depart: Object.values(this.fService.getFlight)[4],
-      arrival: Object.values(this.fService.getFlight)[5]
-
+      depart: Object.values(this.fService.getFlight)[3],
+      arrival: Object.values(this.fService.getFlight)[4]
     })
-    console.log("FlightData: " + Object.entries(this.fService.getFlight));
-    console.log("FROM: " + Object.values(this.fService.getFlight)[4])
-    console.log("Flight To: " + Object.values(this.fService.getFlight)[5])
   }
-
-  saveTicket(summaryForm: FormGroup) {
-    console.log(summaryForm.value)
-    this.dataService.postFlight(summaryForm.value).subscribe(
-      res => {
-        console.log("Saved successfully")
-        alert("Ticket saved !")
-      }
-    )
+  saveTicket() {
+    alert("Saved successfully!")
   }
 
 }

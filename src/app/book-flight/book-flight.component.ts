@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Flight } from '../Models/flight';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FlightServiceService } from '../Services/Flight/flight-service.service';
+import { FlightTableService } from '../Services/FlightTable/flight-table.service';
 import { bookFlight } from './bookFlight';
 
 @Component({
@@ -20,19 +20,29 @@ export class BookFlightComponent implements OnInit {
   passportNo: string = '';
   mailId: string = '';
   phone: string = '';
+  tableId: string | null = '';
   tempData: any = [];
+
   book = new bookFlight();
 
   constructor(
     private flightService: FlightServiceService,
-    private router: Router) { }
-  ngOnInit(): void { }
+    private flighttableService: FlightTableService,
+    private router: Router,
+     private route: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      var id = params.get('id');
+      this.tableId = id;
+    });
+    this.flighttableService.setFlightDetail = this.tableId;
+  }
   onSubmit(bookFlight: NgForm) {
-    console.log(bookFlight.value)
     this.tempData = bookFlight.value;
     this.flightService.setTempData = this.tempData
-    console.log(this.tempData.firstName);
-
     this.router.navigate(['/flights/flightTable/bookFlight/flightSummary'])
   }
 }
+
+

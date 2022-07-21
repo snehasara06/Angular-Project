@@ -1,15 +1,17 @@
 #cover {
-    
     background: #222 url('https://www.technocrazed.com/wp-content/uploads/2015/12/Airplane-wallpaper-11.jpg') center center no-repeat;
     background-size: cover;
-    height: 74vh;
+    height: 100%;
     text-align: center;
     display: flex;
     align-items: center;
-    position:relative;
-    background-position: center;
-    background-attachment: fixed;
+    position: relative;
 }
+
+.icon:hover {
+    background-color: white;
+}
+
 
 #cover-caption {
     width: 100%;
@@ -17,6 +19,7 @@
     z-index: 1;
 }
 
+/* only used for background overlay not needed for centering */
 form:before {
     content: '';
     height: 100%;
@@ -24,28 +27,24 @@ form:before {
     position: absolute;
     top: 0;
     width: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: -1;
     border-radius: 10px;
 }
-label,
-p{
-    color: black;
-    font-size:medium;
-    font-weight: 700;
-}
-.bi{
-    color: white;
-    font-size: 30px;
-    font-weight: bolder;
-    float: right;
-    padding-left: 0.3em;
-    
-  }
 
-input{
-    outline: skyblue;
+h3 {
+    color: #222;
+    font-size: xx-large;
+    font-weight: bold;
 }
-.bi{
-    color: black;
+
+i {
+    font-size: large;
+    color: #222;
+}
+
+.icon {
+    text-align: right;
+    color: #222;
+    margin-left: 400px;
 }

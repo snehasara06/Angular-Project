@@ -7,17 +7,26 @@ import { Flight } from 'src/app/Models/flight';
   providedIn: 'root'
 })
 export class FlightTableService {
+  id: any;
+  readonly baseUrl = "http://localhost:8080/flightTable/";
+  dropList: Flight[] = [];
 
-  constructor(private http:HttpClient,private router:Router) { }
-  readonly baseUrl="http://localhost:8080/flightTable/";
-  dropList:Flight[]=[];
-  
-  getDropList(){
+  constructor(private http: HttpClient, private router: Router) { }
+
+  getDropList() {
     return this.http.get(this.baseUrl)
   }
-  getAvailableFlights(from:any,to:any){
-  console.log("From Service: "+from);
-  console.log("To Service : "+to)
-  return this.http.get(this.baseUrl+`/${from}`+`/${to}`);
+  getAvailableFlights(from: any, to: any) {
+    return this.http.get(this.baseUrl + `/${from}` + `/${to}`);
+  }
+
+  set setFlightDetail(val: any) {
+    this.id = val
+  }
+  get getFlightDetail() {
+    return this.id;
+  }
+  getFlightData(_id: any) {
+    return this.http.get(this.baseUrl + `${_id}`)
   }
 }

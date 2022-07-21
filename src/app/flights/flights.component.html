@@ -6,17 +6,6 @@
                     <div class="px-2">
                         <form action="" class="justify-content-center" #flightDataForm="ngForm">
                             <div class="form-row justify-content-center">
-                                <!-- <div class="col-md-3">
-                                    <div class="input-group ">
-                                        <img src="assets/images/planeIcon.png" style="width: 45px;">
-                                        <select class="form-select" name="trip" [(ngModel)]="flightData.trip">
-                                            <option value="" hidden>Trip</option>
-                                            <option value="round">Round trip</option>
-                                            <option value="one">One way</option>
-                                            <option value="multi">Multi city</option>
-                                        </select>
-                                    </div>
-                                </div> -->
                                 <div class="col-md-3">
                                     <div class="input-group">
                                         <img src="assets/images/seat1.png" style="width: 40px;">
@@ -41,7 +30,7 @@
                                     </option>
                                 </select>
                                 <img src="assets/images/arrival.jpeg" style="width: 50px;">
-                               <select name="arrival" [(ngModel)]="flightData.arrival" class="form-select">
+                                <select name="arrival" [(ngModel)]="flightData.arrival" class="form-select">
                                     <option value="" hidden>To</option>
                                     <option *ngFor="let list of arrayDrop">{{list.departure}}</option>
                                 </select>

@@ -1,9 +1,3 @@
-<!-- Time=new Date().getHours;
-    From: String ='';
-    To:  String ='';
-    ETD=new Date().getHours;
-    Status: String ='';
-    Gate: String =''; -->
 <h3 class="text-center">AVAILABLE FLIGHTS</h3>
 <table class="table bg-white">
   <thead style="background-color: skyblue;">
@@ -14,7 +8,6 @@
       <th>ETD</th>
       <th>Status</th>
       <th>Gate</th>
-      <!-- <th>Action</th> -->
       <th>Ticket</th>
     </tr>
   </thead>
@@ -45,6 +38,6 @@
       <span [ngStyle]="{'background-color':'blue','color':'white','border-radius':'20px','height':'10%'}">{{table.Status}}</span>
     </td>
     <td>{{table.Gate}}</td>
-    <td><button [routerLink]="['./bookFlight']" class="btn btn-info">Select</button></td>  
+    <td><button [routerLink]="['./bookFlight',table._id]"   class="btn btn-info">Select</button></td>  
   </tr>
 </table>

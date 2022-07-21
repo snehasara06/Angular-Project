@@ -6,7 +6,6 @@
                     <h3 class="display py-2 text-truncate">Passenger Details</h3>
                     <br />
                     <span class="icon">
-                        <!-- <i class="bi bi-trash" (click)="resetForm(bookFlight)"></i>Clear -->
                     </span>
                     <div class="px-2">
                         <form action="" class="justify-content-center" #bookFlight="ngForm">
@@ -123,13 +122,8 @@
                                     <input type="text" #passportNo="ngModel" id="passportNo"
                                         [class.is-invalid]="passportNo.invalid && passportNo.touched"
                                         class="form-control" name="passportNo" [(ngModel)]="book.passportNo" required>
-
-                                    <!-- <small class="text-danger" [class.d-none]="idType.valid||idType.untouched">Enter
-                                        passport number</small> -->
-
                                     <small class="text-danger" *ngIf="idType.errors?.['required']"
                                         [class.d-none]="idType.untouched">Enter valid passport number</small>
-                                    <!-- <small *ngIf="idType.errors?.['pattern']" class="text-danger" [class.d-none]="idType.untouched||idType.valid"> Passport.No must be 8 characters long,start with  uppercase alphabet ,next 2 characters should be a number(1st character should be any number from 1-9,2nd character should be any number from 0-9),should be zero or one white space,next 4 character should be 1-9,last character should be 1-9 and contain 8 letters with atleast one number</small> -->
                                 </div>
                                 <div class="col-md-6">
                                     <label for="inputZip" class="form-label">Id Expiration Date(optional)</label>
@@ -170,7 +164,6 @@
                                     <label for="inputState" class="form-label">State</label>
                                     <select id="inputState" class="form-select">
                                         <option selected>Choose...</option>
-                                        <!-- <option>...</option> -->
                                         <option value="Andhra Pradesh">Andhra Pradesh</option>
                                         <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
                                         <option value="Arunachal Pradesh">Arunachal Pradesh</option>

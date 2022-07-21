@@ -4,18 +4,17 @@
             <div class="form-row">
                 <div class="col-md mb-4">
                     <h1 style="text-align:center;">LOGIN</h1>
-                    <!-- <label for="emailId"><b>Email ID</b></label> -->
                     <br>
                     <input type="mailId" #mailId="ngModel" class="form-control" id="mailId" name="mailId"
                         [class.is-invalid]="mailId.invalid && mailId.touched" [(ngModel)]="dataService.mailId" required
                         placeholder="Email ID" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                    <small class="text-danger" [class.d-none]="mailId.valid||mailId.untouched">Enter your mail ID</small>
+                    <small class="text-danger" [class.d-none]="mailId.valid||mailId.untouched">Enter your mail
+                        ID</small>
                 </div>
             </div>
             <div class="form-row">
                 <div class="col-md mb-4">
                     <br>
-                    <!-- <label for="password"><b>Password</b></label> -->
                     <input type="password" #password="ngModel" pattern="^([A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
                         class="form-control" id="password" name="password"
                         [class.is-invalid]="password.invalid && password.touched" [(ngModel)]="dataService.password"
@@ -37,6 +36,6 @@
     <hr>
     <div class="text-center">
         <label class="newLabel">Don't have an account?</label>
-        <button class="btn btn-link"  [routerLink]="['/register']"><span>Sign Up</span></button>
+        <button class="btn btn-link" [routerLink]="['/register']"><span>Sign Up</span></button>
     </div>
 </form>

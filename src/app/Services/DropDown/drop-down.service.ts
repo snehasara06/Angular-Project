@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { DropDownlist } from 'src/app/Models/DropDownList/drop-downlist';
 
 @Injectable({
@@ -8,11 +7,11 @@ import { DropDownlist } from 'src/app/Models/DropDownList/drop-downlist';
 })
 export class DropDownService {
 
-  constructor(private http:HttpClient,private router:Router) { }
- 
-  readonly baseUrl="http://localhost:8080/dropDown/";
-  dropDown: DropDownlist[]=[];
-  getDropDown(){
+  constructor(private http: HttpClient) { }
+
+  readonly baseUrl = "http://localhost:8080/dropDown/";
+  dropDown: DropDownlist[] = [];
+  getDropDown() {
     return this.http.get(this.baseUrl);
   }
 }

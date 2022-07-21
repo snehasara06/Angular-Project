@@ -24,12 +24,11 @@ export class DataService {
   selectedUser!: dataUser;
   loginRole!: String;
 
-  // dataList:data[]=[]
 
   readonly baseUrl = "http://localhost:8080/flightDetails";
-  postFlight(form:any){
-    console.log("firstttt"+form.firstname);
-    return this.http.post(this.baseUrl,form);
-  }
+  // postFlight(form:any){
+  //   console.log("firstttt"+form.firstname);
+  //   return this.http.post(this.baseUrl,form);
+  // }
  
 }

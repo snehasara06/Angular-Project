@@ -1,39 +1,57 @@
- <!-- <section id="cover"> -->
-<div class="row">
-    <div class="col-md-6 mx-auto">
-        <div class="card rounded-0">
-            <div class="card-header">
-                <h3 class="mb-0">Flight Details</h3>
-                <span><i class="bi bi-save" (click)="saveTicket(summaryForm)"></i></span>
-            </div>
-            <div class="card-body">
-                <form class="form" [formGroup]="summaryForm">
-                        <div class="form-group">
-                        <label for="">Passenger name</label>
-                        <input type="text" name="firstName" formControlName="firstName" readonly class="form-control rounded-0">
-                        <input type="text" name="lastName" formControlName="lastName" readonly class="form-control rounded-0">
+<section id="cover" class="min-vh-100">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                    <h3 class="display py-2 text-truncate">Ticket Summary &nbsp;
+                    </h3>
+                    <br />
+                    <span class="icon">
+                    </span>
+                    <div class="px-2">
+                        <form action="" class="justify-content-center" [formGroup]="summaryForm">
+                            <label for="form-label">Passenger name</label>
+
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <input type="text" name="firstName" formControlName="firstName" readonly
+                                        class="form-control rounded-0">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="lastName" formControlName="lastName" readonly
+                                        class="form-control rounded-0">
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <label for="form-label">From</label>
+                                    <input type="text" name="from" formControlName="from" readonly
+                                        class="form-control rounded-0">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="form-label">To</label>
+                                    <input type="text" name="to" formControlName="to" readonly
+                                        class="form-control rounded-0">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-6">
+                                    <label for="form-label">Departure date</label>
+                                    <input type="text" name="depart" formControlName="depart" readonly
+                                        class="form-control rounded-0">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">Arrival date</label>
+                                    <input type="text" name="arrival" formControlName="arrival" readonly
+                                        class="form-control rounded-0">
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
-                    <h4>Flight Details</h4>
-                    <h3>Route:</h3>
-                    <div class="form-group">
-                        <label for="">From</label>
-                        <input type="text" name="from" formControlName="from" readonly class="form-control rounded-0">
-                    </div>
-                    <div class="form-group">
-                        <label for="">To</label>
-                        <input type="text" name="to" formControlName="to" readonly class="form-control rounded-0">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Departure date</label>
-                        <input type="text" name="depart" formControlName="depart" readonly class="form-control rounded-0">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Arrival date</label>
-                        <input type="text" name="arrival" formControlName="arrival" readonly class="form-control rounded-0">
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- </section> -->
+</section>

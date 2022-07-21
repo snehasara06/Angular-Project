@@ -13,8 +13,8 @@ import { flight } from './flight';
 })
 export class FlightsComponent implements OnInit {
   flightData = new flight();
-  depart: string = '';
-  arrive: string = '';
+  depart: any;
+  arrive: any;
   from: any;
   to: any;
   flight: any = [];
@@ -29,39 +29,31 @@ export class FlightsComponent implements OnInit {
   public arrayDrop: any = [];
 
   ngOnInit(): void {
-       this.dropDownService.getDropDown().subscribe((res) => {
+    this.dropDownService.getDropDown().subscribe((res) => {
       this.dropDownService.dropDown = res as DropDownlist[];
       this.arrayDrop = res;
-      console.log(this.arrayDrop)
     })
   }
 
   onSubmit(flightForm: NgForm) {
-    this.from = Object.values(flightForm.value)[2]
-    this.to = Object.values(flightForm.value)[3]
-    console.log("to:" + this.to)
-    console.log("from:" + this.from)
-        if (this.to == "" && this.from == "") {
-          alert("From and to are required");
-          this.router.navigate(['/flights']);
-        }
-        else if (this.to == this.from) {
-          alert("From and to are same");
-          this.router.navigate(['/flights']);
-        }
-        else {
-          this.router.navigate(['/flights/flightTable'])
-        }
 
-    console.log(flightForm.value);
+    this.from = Object.values(flightForm.value)[1]
+    this.to = Object.values(flightForm.value)[2]
+
+    if (this.to == "" && this.from == "") {
+      alert("From and to are required");
+      this.router.navigate(['/flights']);
+    }
+    else if (this.to == this.from) {
+      alert("From and to are same");
+      this.router.navigate(['/flights']);
+    }
+    else {
+      this.router.navigate(['/flights/flightTable'])
+    }
     this.flight = flightForm.value;
-    this.flightService.setData = this.flight
-
-    console.log("From :" + this.flight.from);
-    console.log("To: " + this.flight.to)
-
+    this.flightService.setData = this.flight;
     this.flightTableService.getAvailableFlights(this.from, this.to).subscribe((res) => {
-      console.log("available" + Object.values(res)[0]);
       if (Object.values(res)[0] == 'Not available') {
         alert(Object.values(res)[0]);
       }
